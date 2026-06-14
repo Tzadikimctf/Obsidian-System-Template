@@ -1,0 +1,23 @@
+[
+  "dataview",
+  "templater-obsidian",
+  "obsidian-hover-editor",
+  "obsidian-latex-suite",
+  "obsidian-linter",
+  "tag-wrangler",
+  "note-refactor-obsidian",
+  "image-converter",
+  "multi-properties",
+  "obsidian-excalidraw-plugin",
+  "obsidian-tasks-plugin",
+  "lazy-plugins",
+  "obsidian-tikzjax",
+  "notebook-navigator",
+  "calendar",
+  "pseudocode-in-obs",
+  "metadata-menu",
+  "obsidian-read-it-later",
+  "obsidian-meta-bind-plugin",
+  "better-export-pdf",
+  "copilot"
+]

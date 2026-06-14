@@ -1,0 +1,9 @@
+{
+  "theme": "obsidian",
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "BetterMermaid",
+    "custom-dashboard"
+  ],
+  "baseFontSize": 16
+}

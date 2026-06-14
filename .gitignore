@@ -1,0 +1,13 @@
+﻿# Obsidian system files
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/backups/
+
+# Sync services
+.stfolder/
+.stversions/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,56 @@
+filters:
+  and:
+    - file.folder.startsWith(this.file.folder)
+views:
+  - type: table
+    name: 🏆 ALL PROJECTS
+    filters:
+      and:
+        - type == "project_moc"
+    order:
+      - file.name
+      - priority
+      - status
+      - tags
+      - subject
+    sort:
+      - property: priority
+        direction: DESC
+  - type: table
+    name: 🔥 ACTIVE
+    filters:
+      and:
+        - status == "🟢 Active"
+        - type == "project_moc"
+    order:
+      - file.name
+      - priority
+      - subject
+    sort:
+      - property: priority
+        direction: DESC
+  - type: table
+    name: 💤 TODO
+    filters:
+      and:
+        - status == "🔴 Todo"
+        - type == "project_moc"
+    order:
+      - file.name
+      - priority
+    sort:
+      - property: priority
+        direction: DESC
+  - type: table
+    name: 📁 THIS PROJECT
+    filters:
+      and:
+        - file.folder.startsWith(this.file.folder)
+        - type != "project_moc"
+    order:
+      - file.name
+      - order
+      - status
+    sort:
+      - property: order
+        direction: ASC

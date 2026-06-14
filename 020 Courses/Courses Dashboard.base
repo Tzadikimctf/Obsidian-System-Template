@@ -1,0 +1,43 @@
+filters:
+  and:
+    - file.folder.startsWith(this.file.folder)
+views:
+  - type: table
+    name: 🔥 ACTIVE LEARNING
+    filters:
+      and:
+        - status == "🟢 Active"
+        - type == "course_moc"
+    order:
+      - file.name
+      - priority
+      - platform
+      - subject
+    sort:
+      - property: priority
+        direction: DESC
+  - type: table
+    name: 📚 ALL COURSES
+    filters:
+      and:
+        - type == "course_moc"
+    order:
+      - file.name
+      - status
+      - platform
+      - date_started
+    sort:
+      - property: date_started
+        direction: DESC
+  - type: table
+    name: 📁 THIS COURSE
+    filters:
+      and:
+        - file.folder.startsWith(this.file.folder)
+        - type != "course_moc"
+    order:
+      - file.name
+      - order
+    sort:
+      - property: order
+        direction: ASC

@@ -1,0 +1,64 @@
+filters:
+  and:
+    - file.folder.startsWith(this.file.folder)
+    - type == "uni_course_moc"
+formulas:
+  days_until_moed_a: 'if(exam_date_a, (date(exam_date_a) - today()).days, "")'
+  days_until_moed_b: 'if(exam_date_b, (date(exam_date_b) - today()).days, "")'
+properties:
+  formula.days_until_moed_a:
+    displayName: "Moed A Days Left"
+  formula.days_until_moed_b:
+    displayName: "Moed B Days Left"
+  exam_date_a:
+    displayName: "Moed A"
+  exam_date_b:
+    displayName: "Moed B"
+views:
+  - type: table
+    name: 🎓 THIS SEMESTER
+    filters:
+      and:
+        - status == "🟡 In Progress"
+        - type == "uni_course_moc"
+    order:
+      - file.name
+      - semester
+      - academic_year
+      - exam_date_a
+      - formula.days_until_moed_a
+      - exam_date_b
+      - formula.days_until_moed_b
+      - credits
+    sort:
+      - property: exam_date_a
+        direction: ASC
+  - type: table
+    name: 📜 ACADEMIC RECORD
+    filters:
+      and:
+        - type == "uni_course_moc"
+    order:
+      - file.name
+      - academic_year
+      - semester
+      - status
+      - grade
+    sort:
+      - property: academic_year
+        direction: DESC
+      - property: semester
+        direction: DESC
+  - type: table
+    name: 📁 THIS COURSE
+    filters:
+      and:
+        - file.folder.startsWith(this.file.folder)
+        - type != "uni_course_moc"
+    order:
+      - file.name
+      - file.folder
+      - order
+    sort:
+      - property: order
+        direction: ASC
