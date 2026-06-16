@@ -13,7 +13,7 @@
 Thumbs.db
 
 # HTML for GH pages
-/html-export/
+/.html-export/
 
 # API credentials for Obsidian REST connector
 .env
