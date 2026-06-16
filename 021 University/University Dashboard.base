@@ -3,17 +3,17 @@ filters:
     - file.folder.startsWith(this.file.folder)
     - type == "uni_course_moc"
 formulas:
-  days_until_moed_a: 'if(exam_date_a, (date(exam_date_a) - today()).days, "")'
-  days_until_moed_b: 'if(exam_date_b, (date(exam_date_b) - today()).days, "")'
+  days_until_moed_a: if(exam_date_a, (date(exam_date_a) - today()).days, "")
+  days_until_moed_b: if(exam_date_b, (date(exam_date_b) - today()).days, "")
 properties:
   formula.days_until_moed_a:
-    displayName: "Moed A Days Left"
+    displayName: Moed A Days Left
   formula.days_until_moed_b:
-    displayName: "Moed B Days Left"
+    displayName: Moed B Days Left
   exam_date_a:
-    displayName: "Moed A"
+    displayName: Moed A
   exam_date_b:
-    displayName: "Moed B"
+    displayName: Moed B
 views:
   - type: table
     name: 🎓 THIS SEMESTER
