@@ -10,8 +10,10 @@
     "postProcess": true,
     "displayProgress": true,
     "inlineHTML": false,
-    "exportPath": "",
-    "filesToExport": [],
+    "exportPath": "C:\\Users\\thomy\\Obsidian-System-Template\\html-export",
+    "filesToExport": [
+      "all"
+    ],
     "useFallbackRenderer": false,
     "addBodyClasses": true,
     "addMathjaxStyles": true,

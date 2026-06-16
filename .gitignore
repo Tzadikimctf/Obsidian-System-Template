@@ -1,4 +1,4 @@
-﻿# Obsidian system files
+# Obsidian system files
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache/
@@ -14,3 +14,6 @@ Thumbs.db
 
 # HTML for GH pages
 /html-export/
+
+# API credentials for Obsidian REST connector
+.env

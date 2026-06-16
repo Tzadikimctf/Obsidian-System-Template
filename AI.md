@@ -196,6 +196,19 @@ The vault utilizes **Templater** for automating note creation. AI assistants sho
 
 ---
 
+## 🔌 Live App Connection (AI Connector)
+
+This vault includes a live-running connection interface located in [`.agent/skills/obsidian-connector/`](file:///c:/Users/thomy/Obsidian-System-Template/.agent/skills/obsidian-connector/). If you are running as an AI agent (e.g. Cursor, Gemini, Cliner) inside this vault, you can query the active Obsidian instance directly to read state, verify rendering, or run actions using these scripts:
+
+* **Check active note path**: `python ".agent/skills/obsidian-connector/obsidian_rest.py" get-active`
+* **Read file content**: `python ".agent/skills/obsidian-connector/obsidian_rest.py" read-note "<vault_path>"`
+* **Execute command**: `python ".agent/skills/obsidian-connector/obsidian_rest.py" run-command "<command_id>"`
+* **Inspect live visual DOM**: `uv run python ".agent/skills/obsidian-connector/obsidian_cdp.py" eval "<js_expression>"`
+
+Refer to the custom skill definition in [`SKILL.md`](file:///c:/Users/thomy/Obsidian-System-Template/.agent/skills/obsidian-connector/SKILL.md) for full setup instructions (requires the Local REST API plugin and/or starting Obsidian with debug port 9222).
+
+---
+
 ## 🤖 AI Guidelines & Best Practices
 
 When generating text, modifying files, or creating new content in this vault, AI must adhere to these guidelines:

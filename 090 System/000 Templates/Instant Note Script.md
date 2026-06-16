@@ -2,12 +2,17 @@
 const idea = await tp.system.prompt("What's the idea?");
 if (!idea) return;
 
-// Clean title: first 20 chars of the idea
-const cleanTitle = idea.substring(0, 20).replace(/[\\/:*?"<>|]/g, "");
-const fileName = `Idea - ${cleanTitle} ${tp.date.now("HHmm")}`;
+// Clean title: first 50 chars of the idea, avoiding cut-off words
+let cleanTitle = idea.substring(0, 50).replace(/[\\/:*?"<>|]/g, "");
+if (idea.length > 50) {
+    const lastSpace = cleanTitle.lastIndexOf(" ");
+    if (lastSpace > 0) {
+        cleanTitle = cleanTitle.substring(0, lastSpace);
+    }
+}
+cleanTitle = cleanTitle.trim();
 
-const openTag = "<" + "%";
-const closeTag = "%" + ">";
+const fileName = `Idea - ${cleanTitle} ${tp.date.now("HHmm")}`;
 
 const content = `---
 type: idea_capture
@@ -19,7 +24,7 @@ tags: ["idea"]
 
 ---
 ## 💭 Initial Thoughts
-${openTag} tp.file.cursor() ${closeTag}
+
 
 ---
 ## 🚀 Potential Path
@@ -27,11 +32,22 @@ ${openTag} tp.file.cursor() ${closeTag}
 - [ ] Convert to Permanent Note?
 `;
 
-const path = `012 Idea Inbox/${fileName}.md`;
-await app.vault.create(path, content);
+const folder = app.vault.getAbstractFileByPath("012 Idea Inbox");
+await tp.file.create_new(content, fileName, true, folder);
 
-const newFile = app.vault.getAbstractFileByPath(path);
-await app.workspace.getLeaf().openFile(newFile);
+// Set the cursor programmatically in the new note
+setTimeout(() => {
+    const activeView = app.workspace.getActiveViewOfType(tp.obsidian.MarkdownView);
+    const editor = activeView?.editor;
+    if (editor) {
+        const lines = editor.getValue().split("\n");
+        const targetLineIndex = lines.findIndex(line => line.includes("## 💭 Initial Thoughts"));
+        if (targetLineIndex !== -1) {
+            editor.setCursor({ line: targetLineIndex + 1, ch: 0 });
+            editor.focus();
+        }
+    }
+}, 100);
 
 new Notice(`Idea captured and opened from 012 Idea Inbox.`);
 %>
