@@ -1,0 +1,260 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Obsidian-System-Template]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>Obsidian-System-Template</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 16 Jun 2026 06:18:36 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 16 Jun 2026 06:18:17 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[2308ab1944a6bfa5c5b8]]></title><description><![CDATA[<img src="html-export/site-lib/media/2308ab1944a6bfa5c5b8.svg" target="_self">]]></description><link>html-export/site-lib/media/2308ab1944a6bfa5c5b8.html</link><guid isPermaLink="false">html-export/site-lib/media/2308ab1944a6bfa5c5b8.svg</guid><pubDate>Tue, 16 Jun 2026 06:12:50 GMT</pubDate><enclosure url="html-export/site-lib/media/2308ab1944a6bfa5c5b8.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="html-export/site-lib/media/2308ab1944a6bfa5c5b8.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[favicon]]></title><description><![CDATA[<img src="html-export/site-lib/media/favicon.png" target="_self">]]></description><link>html-export/site-lib/media/favicon.html</link><guid isPermaLink="false">html-export/site-lib/media/favicon.png</guid><pubDate>Tue, 16 Jun 2026 06:12:50 GMT</pubDate><enclosure url="html-export/site-lib/media/favicon.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="html-export/site-lib/media/favicon.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[file-tree-content]]></title><link>html-export/site-lib/html/file-tree-content.html</link><guid isPermaLink="false">html-export/site-lib/html/file-tree-content.html</guid><pubDate>Tue, 16 Jun 2026 06:12:50 GMT</pubDate></item><item><title><![CDATA[6155340132a851f6089e]]></title><description><![CDATA[<img src="html-export/site-lib/media/6155340132a851f6089e.svg" target="_self">]]></description><link>html-export/site-lib/media/6155340132a851f6089e.html</link><guid isPermaLink="false">html-export/site-lib/media/6155340132a851f6089e.svg</guid><pubDate>Tue, 16 Jun 2026 06:12:50 GMT</pubDate><enclosure url="html-export/site-lib/media/6155340132a851f6089e.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="html-export/site-lib/media/6155340132a851f6089e.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[placeholder]]></title><link>090-atlas/placeholder.html</link><guid isPermaLink="false">090 Atlas/placeholder.md</guid><pubDate>Tue, 16 Jun 2026 06:07:34 GMT</pubDate></item><item><title><![CDATA[Video Template]]></title><link>090-system/000-templates/video-template.html</link><guid isPermaLink="false">090 System/000 Templates/Video Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Uni Course MOC Template]]></title><description><![CDATA[Academic Details Semester: {{semester}}
+Academic Year: {{academic_year}}
+Moed A Exam Date: TBD
+Moed B Exam Date: TBD
+Final Grade: TBD This view shows all lectures, assignments, and resources within this folder.📁 THIS COURSE0 resultsSortFilterPropertiesSearchNew
+<a data-href="Problem Sets" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Problem Sets</a>
+<br><a data-href="Final Exam Prep" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Final Exam Prep</a>
+]]></description><link>090-system/000-templates/uni-course-moc-template.html</link><guid isPermaLink="false">090 System/000 Templates/Uni Course MOC Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Uni Lecture Template]]></title><description><![CDATA[Course: <a data-href="<% tp.file.folder(true).split('/').pop() %>" href=".html" class="internal-link" target="_self" rel="noopener nofollow">&lt;% tp.file.folder(true).split('/').pop() %&gt;</a>
+Lecture: #{{order}}&lt;% tp.file.cursor(2) %&gt;<br>Previous: <a data-href="" href="" class="internal-link is-unresolved" target="_self" rel="noopener nofollow"></a> | Next: <a data-href="" href="" class="internal-link is-unresolved" target="_self" rel="noopener nofollow"></a>]]></description><link>090-system/000-templates/uni-lecture-template.html</link><guid isPermaLink="false">090 System/000 Templates/Uni Lecture Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Resource Template]]></title><description><![CDATA[{{excerpt}} {{content}}]]></description><link>090-system/000-templates/resource-template.html</link><guid isPermaLink="false">090 System/000 Templates/Resource Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Smart Note Creator]]></title><description><![CDATA[&lt;%*
+const activeFile = tp.config.active_file;
+if (!activeFile) {
+new Notice("Error: No active file found.");
+return;
+}
+const parentMOC = activeFile.basename;
+const parentFolder = activeFile.parent.path;const fileCache = app.metadataCache.getFileCache(activeFile);
+const mocType = fileCache?.frontmatter?.type;let templatePath = "";
+let subFolder = "";
+let targetType = "";// Detection Logic
+if (mocType = "project_moc") {
+templatePath = "090 System/000 Templates/Project Note Template.md";
+subFolder = "Logs";
+targetType = "project_note";
+} else if (mocType = "uni_course_moc") {
+templatePath = "090 System/000 Templates/Uni Lecture Template.md";
+subFolder = "Lectures";
+targetType = "uni_lecture";
+} else if (mocType === "course_moc") {
+templatePath = "090 System/000 Templates/Course Note Template.md";
+subFolder = "Lectures";
+targetType = "course_note";
+} else {
+new Notice("Error: Active note is not a valid Course or Project MOC.");
+return;
+}const noteName = await tp.system.prompt("Note Name");
+if (!noteName) return;// Calculate next order sequence number by counting existing files of targetType
+let orderDefault = "1";
+const targetFolderObj = app.vault.getAbstractFileByPath(${parentFolder}/${subFolder});
+if (targetFolderObj &amp;&amp; targetFolderObj.children) {
+const mdFiles = targetFolderObj.children.filter(f =&gt; {
+if (f.extension !== "md" &amp;&amp; !f.name.endsWith(".md")) return false;
+const cache = app.metadataCache.getFileCache(f);
+return cache?.frontmatter?.type === targetType;
+});
+orderDefault = (mdFiles.length + 1).toString();
+}const order = await tp.system.prompt("Order Number", orderDefault);const templateFile = app.vault.getAbstractFileByPath(templatePath);
+if (!templateFile) {
+new Notice("Error: Template file not found at " + templatePath);
+return;
+}
+let content = await app.vault.read(templateFile);// Replacements
+content = content.replace(/{{title}}/g, noteName);
+content = content.replace(/{{parent}}/g, parentMOC);
+content = content.replace(/{{order}}/g, order);
+content = content.replace(/{{date}}/g, tp.date.now("YYYY-MM-DD"));// Create subfolder if missing
+const targetPath = ${parentFolder}/${subFolder};
+if (!app.vault.getAbstractFileByPath(targetPath)) {
+await app.vault.createFolder(targetPath);
+}// Create and Open
+const finalPath = ${targetPath}/${noteName}.md;
+await app.vault.create(finalPath, content);
+const newFile = app.vault.getAbstractFileByPath(finalPath);
+await app.workspace.getLeaf().openFile(newFile);
+%&gt;]]></description><link>090-system/000-templates/smart-note-creator.html</link><guid isPermaLink="false">090 System/000 Templates/Smart Note Creator.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Project MOC Template]]></title><description><![CDATA[Overview
+What is the "Definition of Done" for this project?
+Views0 resultsSortFilterPropertiesSearchNewUse Notebook Navigator to move through these notes.]]></description><link>090-system/000-templates/project-moc-template.html</link><guid isPermaLink="false">090 System/000 Templates/Project MOC Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Project Note Template]]></title><description><![CDATA[Project: <a data-href="<% tp.file.folder(true).split('/').pop() %>" href=".html" class="internal-link" target="_self" rel="noopener nofollow">&lt;% tp.file.folder(true).split('/').pop() %&gt;</a>
+Sequence: #{{order}}&lt;% tp.file.cursor(2) %&gt;<br>Previous: <a data-href="" href="" class="internal-link is-unresolved" target="_self" rel="noopener nofollow"></a> | Next: <a data-href="" href="" class="internal-link is-unresolved" target="_self" rel="noopener nofollow"></a>]]></description><link>090-system/000-templates/project-note-template.html</link><guid isPermaLink="false">090 System/000 Templates/Project Note Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[New Project Script]]></title><description><![CDATA[&lt;%*
+const projectName = await tp.system.prompt("Project Name");
+if (!projectName) return;// 1. Tag Logic
+const tagsInput = await tp.system.prompt("Tags (comma separated)", "coding, security");
+const tagsFormatted = tagsInput ? tagsInput.split(',').map(t =&gt; "${t.trim()}").join(", ") : "";// 2. Fetch the Template Content
+const templatePath = "090 System/000 Templates/Project MOC Template.md";
+const templateFile = app.vault.getAbstractFileByPath(templatePath);
+if (!templateFile) {
+new Notice("Error: Template file not found at " + templatePath);
+return;
+}
+let content = await app.vault.read(templateFile);// 3. Dynamic Replacements
+// This replaces placeholders in your template file with the real data
+content = content.replace(/{{title}}/g, projectName);
+content = content.replace(/{{tags}}/g, tagsFormatted);
+content = content.replace(/{{date}}/g, tp.date.now("YYYY-MM-DD"));// 4. Folder Creation
+const rootPath = 010 Projects/Todo/${projectName};
+const subFolders = ["attachments", "code", "archive"];if (!app.vault.getAbstractFileByPath(rootPath)) {
+await app.vault.createFolder(rootPath);
+for (const sub of subFolders) {
+await app.vault.createFolder(${rootPath}/${sub});
+}
+}// 5. Create and Open the file
+const mocPath = ${rootPath}/${projectName} MOC.md;
+await app.vault.create(mocPath, content);const newFile = app.vault.getAbstractFileByPath(mocPath);
+await app.workspace.getLeaf().openFile(newFile);new Notice(Project ${projectName} initialized.);
+%&gt;]]></description><link>090-system/000-templates/new-project-script.html</link><guid isPermaLink="false">090 System/000 Templates/New Project Script.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[New Uni Course Script]]></title><description><![CDATA[&lt;%*
+const projectName = await tp.system.prompt("University Course Name");
+if (!projectName) return;// 1. Semester &amp; Academic Year Logic
+const now = new Date();
+const month = now.getMonth();
+const year = now.getFullYear();
+let semester = "";
+let academicYear = "";if (month &gt;= 9 || month &lt;= 1) { // Oct (9) to Feb (1)
+semester = "A";
+academicYear = month &gt;= 9 ? ${year}-${year + 1} : ${year - 1}-${year};
+} else if (month &gt;= 2 &amp;&amp; month &lt;= 6) { // Mar (2) to Jul (6)
+semester = "B";
+academicYear = ${year - 1}-${year};
+} else {
+semester = "Summer";
+academicYear = ${year - 1}-${year};
+}// 2. Fetch the Template Content
+const templatePath = "090 System/000 Templates/Uni Course MOC Template.md";
+const templateFile = app.vault.getAbstractFileByPath(templatePath);
+if (!templateFile) {
+new Notice("Error: Uni Template not found at " + templatePath);
+return;
+}
+let content = await app.vault.read(templateFile);// 3. Dynamic Replacements
+content = content.replace(/{{title}}/g, projectName);
+content = content.replace(/{{semester}}/g, semester);
+content = content.replace(/{{academic_year}}/g, academicYear);
+content = content.replace(/{{date}}/g, tp.date.now("YYYY-MM-DD"));// 4. Folder Creation (Unified 021 University structure)
+const rootPath = 021 University/${projectName};
+const subFolders = ["Lectures", "Assignments", "Resources"];if (!app.vault.getAbstractFileByPath(rootPath)) {
+await app.vault.createFolder(rootPath);
+for (const sub of subFolders) {
+await app.vault.createFolder(${rootPath}/${sub});
+}
+}// 5. Create and Open
+const mocPath = ${rootPath}/${projectName} MOC.md;
+await app.vault.create(mocPath, content);
+const newFile = app.vault.getAbstractFileByPath(mocPath);
+await app.workspace.getLeaf().openFile(newFile);new Notice(Enrolled in ${projectName} - Semester ${semester});
+%&gt;]]></description><link>090-system/000-templates/new-uni-course-script.html</link><guid isPermaLink="false">090 System/000 Templates/New Uni Course Script.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[New Course Script]]></title><description><![CDATA[&lt;%*
+const courseName = await tp.system.prompt("Course Name");
+if (!courseName) return;const platform = await tp.system.prompt("Platform (e.g. YouTube, Coursera)", "YouTube");// 1. Fetch the Template Content
+const templatePath = "090 System/000 Templates/Course MOC Template.md";
+const templateFile = app.vault.getAbstractFileByPath(templatePath);
+if (!templateFile) {
+new Notice("Error: General Course Template not found at " + templatePath);
+return;
+}
+let content = await app.vault.read(templateFile);// 2. Dynamic Replacements
+content = content.replace(/{{title}}/g, courseName);
+content = content.replace(/{{platform}}/g, platform);
+content = content.replace(/{{date}}/g, tp.date.now("YYYY-MM-DD"));// 3. Folder Creation
+const rootPath = 020 Courses/${courseName};
+const subFolders = ["Lectures", "Assignments", "Resources"];if (!app.vault.getAbstractFileByPath(rootPath)) {
+await app.vault.createFolder(rootPath);
+for (const sub of subFolders) {
+await app.vault.createFolder(${rootPath}/${sub});
+}
+}// 4. Create and Open
+const mocPath = ${rootPath}/${courseName} MOC.md;
+await app.vault.create(mocPath, content);
+const newFile = app.vault.getAbstractFileByPath(mocPath);
+await app.workspace.getLeaf().openFile(newFile);new Notice(Course ${courseName} initialized.);
+%&gt;]]></description><link>090-system/000-templates/new-course-script.html</link><guid isPermaLink="false">090 System/000 Templates/New Course Script.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[New Homework Script]]></title><description><![CDATA[&lt;%*
+// 1. Get list of University courses (subfolders in 021 University)
+const uniFolder = app.vault.getAbstractFileByPath("021 University");
+if (!uniFolder || !uniFolder.children) {
+new Notice("Error: 021 University folder not found.");
+return;
+}
+const courses = uniFolder.children
+.filter(c =&gt; c.children) // is a folder
+.map(c =&gt; c.name)
+.filter(name =&gt; name !== "Resources"); // exclude general Resources folderif (courses.length === 0) {
+new Notice("No university courses found to assign homework to.");
+return;
+}// 2. Prompt for Course selection
+const courseName = await tp.system.suggester(courses, courses);
+if (!courseName) return;// 3. Prompt for Homework Name
+const hwName = await tp.system.prompt("Assignment Name (e.g. Homework 1)");
+if (!hwName) return;// 4. Prompt for Due Date
+const dueDate = await tp.system.prompt("Due Date (YYYY-MM-DD)", tp.date.now("YYYY-MM-DD", 7));
+if (!dueDate) return;// Resolve subject name and paths
+const startingTime = tp.date.now("YY/MM/DD, HH:mm");
+const openTag = "&lt;" + "%";
+const closeTag = "%" + "&gt;";// Construct the file contents
+const content = `---
+type: homework
+subject: "<a data-href="${courseName}" href=".html" class="internal-link" target="_self" rel="noopener nofollow">${courseName}</a>"
+status: 🔴 Todo
+due: ${dueDate}
+tags:
+Academia
+links:
+<br>"<a data-href="021 University/${courseName}/Assignments" href=".html" class="internal-link" target="_self" rel="noopener nofollow">021 University/${courseName}/Assignments</a>"
+starting time: ${startingTime}
+teacher: name
+progress: WIP ${openTag} tp.file.cursor() ${closeTag}
+`;// Create target folder if missing
+const targetFolder = 021 University/${courseName}/Assignments;
+if (!app.vault.getAbstractFileByPath(targetFolder)) {
+await app.vault.createFolder(targetFolder);
+}// Create and Open file
+const finalPath = ${targetFolder}/${hwName}.md;
+await app.vault.create(finalPath, content);const newFile = app.vault.getAbstractFileByPath(finalPath);
+await app.workspace.getLeaf().openFile(newFile);new Notice(Assignment ${hwName} created.);
+%&gt;]]></description><link>090-system/000-templates/new-homework-script.html</link><guid isPermaLink="false">090 System/000 Templates/New Homework Script.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Instant Note Script]]></title><description><![CDATA[&lt;%*
+const idea = await tp.system.prompt("What's the idea?");
+if (!idea) return;// Clean title: first 20 chars of the idea
+const cleanTitle = idea.substring(0, 20).replace(/[\/:*?"&lt;&gt;|]/g, "");
+const fileName = Idea - ${cleanTitle} ${tp.date.now("HHmm")};const openTag = "&lt;" + "%";
+const closeTag = "%" + "&gt;";const content = `---
+type: idea_capture
+status: "🧠 Raw"
+date_captured: ${tp.date.now("YYYY-MM-DD HH:mm")}
+tags: ["idea"]${openTag} tp.file.cursor() ${closeTag}
+Convert to Project?
+Convert to Permanent Note?
+const path = 012 Idea Inbox/${fileName}.md;
+await app.vault.create(path, content);const newFile = app.vault.getAbstractFileByPath(path);
+await app.workspace.getLeaf().openFile(newFile);new Notice(Idea captured and opened from 012 Idea Inbox.);
+%&gt;]]></description><link>090-system/000-templates/instant-note-script.html</link><guid isPermaLink="false">090 System/000 Templates/Instant Note Script.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Lecture Template]]></title><link>090-system/000-templates/lecture-template.html</link><guid isPermaLink="false">090 System/000 Templates/Lecture Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Daily note template]]></title><description><![CDATA[Tasks query: There was an error expanding one or more placeholders.The error message was: Unknown property: date:YYYY-MM-DDThe problem is in: done on {{date:YYYY-MM-DD}}not done
+path does not include compras
+GROUP BY tags
+]]></description><link>090-system/000-templates/daily-note-template.html</link><guid isPermaLink="false">090 System/000 Templates/Daily note template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Homework Template]]></title><link>090-system/000-templates/homework-template.html</link><guid isPermaLink="false">090 System/000 Templates/Homework Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Course Note Template]]></title><description><![CDATA[Course: <a data-href="<% tp.file.folder(true).split('/').pop() %>" href=".html" class="internal-link" target="_self" rel="noopener nofollow">&lt;% tp.file.folder(true).split('/').pop() %&gt;</a>
+Sequence: #{{order}}&lt;% tp.file.cursor(2) %&gt;<br>Previous: <a data-href="" href="" class="internal-link is-unresolved" target="_self" rel="noopener nofollow"></a> | Next: <a data-href="" href="" class="internal-link is-unresolved" target="_self" rel="noopener nofollow"></a>]]></description><link>090-system/000-templates/course-note-template.html</link><guid isPermaLink="false">090 System/000 Templates/Course Note Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Cyber security template]]></title><link>090-system/000-templates/cyber-security-template.html</link><guid isPermaLink="false">090 System/000 Templates/Cyber security template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Concept Template]]></title><link>090-system/000-templates/concept-template.html</link><guid isPermaLink="false">090 System/000 Templates/Concept Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[Course MOC Template]]></title><description><![CDATA[Learning Details Platform: {{platform}}
+Status: view: status
+Started: {{date}} Organized by your Notebook Navigator order.📁 THIS COURSE19 resultsSort1Filter2PropertiesSearchNewShowing 19file nameorder
+<a data-href="Syllabus" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Syllabus</a>
+<br><a data-href="Course Certificate" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Course Certificate</a>
+]]></description><link>090-system/000-templates/course-moc-template.html</link><guid isPermaLink="false">090 System/000 Templates/Course MOC Template.md</guid><pubDate>Tue, 16 Jun 2026 06:07:20 GMT</pubDate></item><item><title><![CDATA[<% tp.file.title %>]]></title><link>090-system/000-templates/article-template.html</link><guid isPermaLink="false">090 System/000 Templates/Article template.md</guid><pubDate>Invalid Date</pubDate></item><item><title><![CDATA[000 University MOC]]></title><description><![CDATA[📊 Academic Performance Summary Weighted GPA: N/A (based on 0 graded credits)
+Unweighted GPA: N/A (based on 0 courses)
+Completed Credits: 0
+Active Courses: 0 Multi column The most urgent academic priorities for Semester {{semester}}.
+🎓 THIS SEMESTER0 resultsSort1Filter2PropertiesSearchNewShowing 0file namesemesteracademic_yearexam_date_aMoed A Days Leftexam_date_b Enroll in New Course <a data-tooltip-position="top" aria-label="021 University/Resources" data-href="021 University/Resources" href=".html" class="internal-link" target="_self" rel="noopener nofollow">📚 Library</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas" data-href="090 Atlas" href="090-atlas.html" class="internal-link" target="_self" rel="noopener nofollow">🗺️ Knowledge Atlas</a> A complete history of all your university courses and grades.Views0 resultsSortFilterPropertiesSearchNew0 tasks
+Enrollment: Use the button above. The script detects Semester A (Oct-Feb), Semester B (Mar-Jul), or Summer automatically.
+Sequencing: Use the order property in your lecture notes to maintain chronological order in the "THIS COURSE" view.
+Finals: Input your exam_date in the individual course MOC to have it appear in the "This Semester" leaderboard.
+]]></description><link>021-university/000-university-moc.html</link><guid isPermaLink="false">021 University/000 University MOC.md</guid><pubDate>Sun, 14 Jun 2026 06:16:45 GMT</pubDate></item><item><title><![CDATA[University Dashboard]]></title><description><![CDATA[🎓 THIS SEMESTER0 resultsSort1Filter2PropertiesSearchNewShowing 0file namesemesteracademic_yearexam_date_aMoed A Days Leftexam_date_bMoed B Days Leftcredits]]></description><link>021-university/university-dashboard.html</link><guid isPermaLink="false">021 University/University Dashboard.base</guid><pubDate>Sun, 14 Jun 2026 06:16:35 GMT</pubDate></item><item><title><![CDATA[090 Atlas]]></title><description><![CDATA[Welcome to your central repository of evergreen notes and knowledge structures. This is where courses, projects, and clippings are synthesized into long-term understanding.Multi column <a data-href="Discrete Math" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Discrete Math</a>
+<br><a data-href="Complex Numbers" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Complex Numbers</a>
+<br><a data-href="Set Theory" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Set Theory</a>
+<br><a data-href="algebra" href=".html" class="internal-link" target="_self" rel="noopener nofollow">algebra</a>
+<br><a data-href="Pre CS Course" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Pre CS Course</a> <br><a data-tooltip-position="top" aria-label="090 Atlas/Cyber Security/Notes" data-href="090 Atlas/Cyber Security/Notes" href=".html" class="internal-link" target="_self" rel="noopener nofollow">General Security Notes</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas/Cyber Security/Reverse engineering" data-href="090 Atlas/Cyber Security/Reverse engineering" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Reverse Engineering</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas/Cyber Security/Malware dev" data-href="090 Atlas/Cyber Security/Malware dev" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Malware Dev</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas/Cyber Security/Binary exploitation" data-href="090 Atlas/Cyber Security/Binary exploitation" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Binary Exploitation</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas/Cyber Security/CTF" data-href="090 Atlas/Cyber Security/CTF" href=".html" class="internal-link" target="_self" rel="noopener nofollow">CTF Dojo</a> <br><a data-tooltip-position="top" aria-label="090 Atlas/Programming/General programming resources" data-href="090 Atlas/Programming/General programming resources" href=".html" class="internal-link" target="_self" rel="noopener nofollow">General Resources</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas/Programming/C/Resources" data-href="090 Atlas/Programming/C/Resources" href=".html" class="internal-link" target="_self" rel="noopener nofollow">C Programming</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas/Books/Modern C" data-href="090 Atlas/Books/Modern C" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Modern C (Book)</a> <br><a data-tooltip-position="top" aria-label="011 Resource Inbox" data-href="011 Resource Inbox" href=".html" class="internal-link" target="_self" rel="noopener nofollow">📥 Raw Resource Inbox</a>
+<br><a data-tooltip-position="top" aria-label="Clippings" data-href="Clippings" href=".html" class="internal-link" target="_self" rel="noopener nofollow">📰 Clippings (Web Import)</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas/Youtube Learning" data-href="090 Atlas/Youtube Learning" href=".html" class="internal-link" target="_self" rel="noopener nofollow">📺 Youtube Learning</a>
+]]></description><link>090-atlas.html</link><guid isPermaLink="false">090 Atlas.md</guid><pubDate>Sat, 13 Jun 2026 19:23:03 GMT</pubDate></item><item><title><![CDATA[000 Courses MOC]]></title><description><![CDATA[Multi column 🔥 ACTIVE LEARNING0 resultsSort1Filter2PropertiesSearchNewShowing 0file namepriorityplatformsubject Start New Course <a data-tooltip-position="top" aria-label="011 Resource Inbox" data-href="011 Resource Inbox" href=".html" class="internal-link" target="_self" rel="noopener nofollow">📥 Inbox</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas" data-href="090 Atlas" href="090-atlas.html" class="internal-link" target="_self" rel="noopener nofollow">🗺️ Atlas</a> 📚 ALL COURSES0 resultsSort1Filter1PropertiesSearchNewShowing 0file namestatusplatformdate_started
+Tracking: Use the priority (1-10) to decide what to learn next.
+Resources: Drop PDFs or links into the Resources subfolder to keep the dashboard clean.
+Navigator: Set order: 1, order: 2, etc., in your lecture notes to flip through them easily.
+]]></description><link>020-courses/000-courses-moc.html</link><guid isPermaLink="false">020 Courses/000 Courses MOC.md</guid><pubDate>Sat, 13 Jun 2026 19:22:54 GMT</pubDate></item><item><title><![CDATA[000 Projects MOC]]></title><description><![CDATA[This view is live-synced with your project folders. Changing a status here updates the file automatically.🏆 ALL PROJECTS0 resultsSort1Filter1PropertiesSearchNewShowing 0file nameprioritystatustagssubjectMulti column Runs the automation script to build folders and the MOC. Create New Project Inbox: <a data-href="011 Resource Inbox" href=".html" class="internal-link" target="_self" rel="noopener nofollow">011 Resource Inbox</a>
+<br>Knowledge: <a data-href="090 Atlas" href="090-atlas.html" class="internal-link" target="_self" rel="noopener nofollow">090 Atlas</a>
+Active Projects: (View the tab below) Prioritization: Set your priority between 1-10. The "ALL PROJECTS" tab sorts these descending by default.
+Navigation: Use Notebook Navigator once you jump into a specific project folder to maintain your research flow.
+Organization: Ensure all new projects have type: project_moc to appear in this dashboard.
+]]></description><link>010-projects/000-projects-moc.html</link><guid isPermaLink="false">010 Projects/000 Projects MOC.md</guid><pubDate>Sat, 13 Jun 2026 19:22:49 GMT</pubDate></item><item><title><![CDATA[000 Home MOC]]></title><description><![CDATA[ 🧠 Instant Idea 📓 Daily Note 📝 New Assignment
+<a data-tooltip-position="top" aria-label="000 Projects MOC" data-href="000 Projects MOC" href="010-projects/000-projects-moc.html" class="internal-link" target="_self" rel="noopener nofollow">🚀 Projects</a>
+<br><a data-tooltip-position="top" aria-label="000 University MOC" data-href="000 University MOC" href="021-university/000-university-moc.html" class="internal-link" target="_self" rel="noopener nofollow">🏫 University</a>
+<br><a data-tooltip-position="top" aria-label="000 Courses MOC" data-href="000 Courses MOC" href="020-courses/000-courses-moc.html" class="internal-link" target="_self" rel="noopener nofollow">🎓 Courses</a>
+<br><a data-tooltip-position="top" aria-label="090 Atlas" data-href="090 Atlas" href="090-atlas.html" class="internal-link" target="_self" rel="noopener nofollow">🗺️ Knowledge</a>
+Combined view of your active technical projects and upcoming university exams.🔥 ACTIVE0 resultsSort1Filter2PropertiesSearchNewShowing 0file nameprioritysubject🎓 THIS SEMESTER0 resultsSortFilterPropertiesSearchNew0 tasksDataview: No results to show for table query.Multi column Dataview: No results to show for list query. Dataview: No results to show for list query. ]]></description><link>000-home-moc.html</link><guid isPermaLink="false">000 Home MOC.md</guid><pubDate>Sat, 13 Jun 2026 19:22:45 GMT</pubDate></item><item><title><![CDATA[Courses Dashboard]]></title><description><![CDATA[🔥 ACTIVE LEARNING0 resultsSort1Filter2PropertiesSearchNewShowing 0file namepriorityplatformsubject]]></description><link>020-courses/courses-dashboard.html</link><guid isPermaLink="false">020 Courses/Courses Dashboard.base</guid><pubDate>Sat, 24 Jan 2026 18:34:49 GMT</pubDate></item><item><title><![CDATA[Projects Dashboard]]></title><description><![CDATA[🏆 ALL PROJECTS0 resultsSort1Filter1PropertiesSearchNewShowing 0file nameprioritystatustagssubject]]></description><link>010-projects/projects-dashboard.html</link><guid isPermaLink="false">010 Projects/Projects Dashboard.base</guid><pubDate>Fri, 23 Jan 2026 16:22:54 GMT</pubDate></item></channel></rss>
