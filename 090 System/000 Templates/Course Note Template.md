@@ -7,6 +7,7 @@ date_added: {{date}}
 ---
 # {{title}}
 
+**MOC:** [[{{parent}}]]
 **Course:** [[<% tp.file.folder(true).split('/').pop() %>]]
 **Sequence:** #{{order}}
 

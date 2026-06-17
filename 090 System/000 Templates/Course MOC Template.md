@@ -1,5 +1,6 @@
 ---
 type: course_moc
+student_name: 
 status: "🔴 Todo"
 priority: 5
 platform: "{{platform}}"

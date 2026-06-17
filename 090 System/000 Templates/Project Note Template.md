@@ -10,6 +10,7 @@ links:
 ---
 # {{title}}
 
+**MOC:** [[{{parent}}]]
 **Project:** [[<% tp.file.folder(true).split('/').pop() %>]]
 **Sequence:** #{{order}}
 

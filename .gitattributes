@@ -1,0 +1,23 @@
+# Auto-normalize all text files (convert to LF on commit, CRLF on checkout for Windows)
+* text=auto
+
+# Explicitly declare text files that should always be normalized
+*.md text
+*.txt text
+*.json text
+*.css text
+*.js text
+*.ps1 text
+*.html text
+*.base text
+
+# Explicitly declare binary files (ensure they are not modified by Git)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.wasm binary

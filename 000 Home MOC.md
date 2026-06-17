@@ -1,5 +1,6 @@
 ---
 type: sovereign_moc
+student_name: 
 links: "[[000 Home]]"
 cssclasses:
   - home-moc

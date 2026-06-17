@@ -53,7 +53,7 @@ All note generation workflows are automated. Avoid creating project, course, or 
 ## 🏫 University System Details
 
 ### 📊 Performance Tracking (GPA Card)
-The home page of your university portal ([000 University MOC.md](file:///c:/Users/thomy/Obsidian-System-Template/021%20University/000%20University%20MOC.md)) contains an automated DataviewJS card summarizing your academic standings:
+The home page of your university portal ([000 University MOC.md](021%20University/000%20University%20MOC.md)) contains an automated DataviewJS card summarizing your academic standings:
 * **Weighted GPA:** Automatically calculates grade weights based on credits:
   $$\text{Weighted GPA} = \frac{\sum (\text{Grade} \times \text{Credits})}{\sum \text{Credits}}$$
 * **Unweighted GPA:** Calculates the simple average of all graded courses.
@@ -75,7 +75,7 @@ No need to maintain manual checkboards. The `Academic Tasks` section on the univ
 
 ## 📐 LaTeX Suite Typesetting Snippets
 
-For STEM courses, a comprehensive set of real-time math snippets is loaded from [latex-suite-snippets.js](file:///c:/Users/thomy/Obsidian-System-Template/090%20System/Latex/latex-suite-snippets.js). 
+For STEM courses, a comprehensive set of real-time math snippets is loaded from [latex-suite-snippets.js](090%20System/Latex/latex-suite-snippets.js). 
 
 ### Popular Math Mode Shortcuts:
 * **`mk`** ➡️ `$$0$` (inline math mode)
