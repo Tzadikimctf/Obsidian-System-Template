@@ -200,6 +200,27 @@ The algorithm uses $O(n \log n)$ sorting. See [[Algorithm Notes#Sorting]] for de
 Reviewed in [[Meeting Notes 2024-01-10#Decisions]].
 ````
 
+## Validation
+
+The skill includes an automated validation script in `.agent/skills/obsidian-markdown/scripts/validate.py` to check for formatting errors (mismatched code blocks, unclosed frontmatter, unbalanced LaTeX, or invalid/unlabeled Mermaid blocks).
+
+### Run Validation
+
+Validate the entire vault:
+```powershell
+python .agent/skills/obsidian-markdown/scripts/validate.py
+```
+
+Validate a specific file or folder:
+```powershell
+python .agent/skills/obsidian-markdown/scripts/validate.py "021 University/Operating systems"
+```
+
+Only print files with warnings/errors:
+```powershell
+python .agent/skills/obsidian-markdown/scripts/validate.py --quiet
+```
+
 ## References
 
 - [Obsidian Flavored Markdown](https://help.obsidian.md/obsidian-flavored-markdown)
