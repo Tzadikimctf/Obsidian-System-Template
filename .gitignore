@@ -17,3 +17,6 @@ Thumbs.db
 
 # API credentials for Obsidian REST connector
 .env
+
+# Custom plugin development
+/.developer/
