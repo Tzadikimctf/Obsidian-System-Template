@@ -3,7 +3,8 @@
   "cssTheme": "",
   "enabledCssSnippets": [
     "BetterMermaid",
-    "custom-dashboard"
+    "custom-dashboard",
+    "pdf-page-breaks"
   ],
   "baseFontSize": 16
 }

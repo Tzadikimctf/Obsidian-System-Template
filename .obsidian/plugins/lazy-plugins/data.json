@@ -77,6 +77,9 @@
       },
       "copilot": {
         "startupType": "instant"
+      },
+      "obsidian-local-rest-api": {
+        "startupType": "instant"
       }
     },
     "loadOrder": []

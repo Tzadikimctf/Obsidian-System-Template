@@ -10,10 +10,8 @@
     "postProcess": true,
     "displayProgress": true,
     "inlineHTML": false,
-    "exportPath": "C:\\Users\\thomy\\Obsidian-System-Template\\.html-export",
-    "filesToExport": [
-      "all"
-    ],
+    "exportPath": "",
+    "filesToExport": [],
     "useFallbackRenderer": false,
     "addBodyClasses": true,
     "addMathjaxStyles": true,
@@ -216,11 +214,7 @@
     "siteName": "Obsidian-System-Template",
     "iconEmojiStyle": "Native",
     "exportRoot": "",
-    "includePluginCss": [
-      "obsidian-meta-bind-plugin",
-      "obsidian-tasks-plugin",
-      "dataview"
-    ],
+    "includePluginCss": [],
     "includeStyleCssIds": [],
     "autoDisposeWebpages": true
   },

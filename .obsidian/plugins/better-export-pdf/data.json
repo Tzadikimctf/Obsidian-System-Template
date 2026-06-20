@@ -15,7 +15,7 @@
   "prevConfig": {
     "pageSize": "A4",
     "marginType": "1",
-    "showTitle": true,
+    "showTitle": false,
     "open": true,
     "scale": 100,
     "landscape": false,
@@ -25,6 +25,6 @@
     "marginRight": "10",
     "displayHeader": false,
     "displayFooter": false,
-    "cssSnippet": "C:\\Users\\thomy\\Obsidian notes\\.obsidian\\snippets\\jewish-life-export.css"
+    "cssSnippet": "C:\\Users\\thomy\\Obsidian notes\\.obsidian\\snippets\\pdf-page-breaks.css"
   }
 }

@@ -19,5 +19,8 @@
   "obsidian-read-it-later",
   "obsidian-meta-bind-plugin",
   "better-export-pdf",
-  "copilot"
+  "copilot",
+  "obsidian-local-rest-api",
+  "loom",
+  "webpage-html-export"
 ]
