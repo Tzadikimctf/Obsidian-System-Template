@@ -198,14 +198,14 @@ The vault utilizes **Templater** for automating note creation. AI assistants sho
 
 ## 🔌 Live App Connection (AI Connector)
 
-This vault includes a live-running connection interface located in [`.agent/skills/obsidian-connector/`](.agent/skills/obsidian-connector/). If you are running as an AI agent (e.g. Cursor, Gemini, Cliner) inside this vault, you can query the active Obsidian instance directly to read state, verify rendering, or run actions using these scripts:
+This vault includes a live-running connection interface located in [`.agent/skills/obsidian-connector/`](file:///c:/Users/thomy/Obsidian%20notes/.agent/skills/obsidian-connector/). If you are running as an AI agent (e.g. Cursor, Gemini, Cliner) inside this vault, you can query the active Obsidian instance directly to read state, verify rendering, or run actions using these scripts:
 
 * **Check active note path**: `python ".agent/skills/obsidian-connector/obsidian_rest.py" get-active`
 * **Read file content**: `python ".agent/skills/obsidian-connector/obsidian_rest.py" read-note "<vault_path>"`
 * **Execute command**: `python ".agent/skills/obsidian-connector/obsidian_rest.py" run-command "<command_id>"`
 * **Inspect live visual DOM**: `uv run python ".agent/skills/obsidian-connector/obsidian_cdp.py" eval "<js_expression>"`
 
-Refer to the custom skill definition in [`SKILL.md`](.agent/skills/obsidian-connector/SKILL.md) for full setup instructions (requires the Local REST API plugin and/or starting Obsidian with debug port 9222).
+Refer to the custom skill definition in [`SKILL.md`](file:///c:/Users/thomy/Obsidian%20notes/.agent/skills/obsidian-connector/SKILL.md) for full setup instructions (requires the Local REST API plugin and/or starting Obsidian with debug port 9222).
 
 ---
 
@@ -218,3 +218,19 @@ When generating text, modifying files, or creating new content in this vault, AI
 * **Respect Dashboard Views:** Dashboards (e.g. `Projects Dashboard.base`, `University Dashboard.base`, `Courses Dashboard.base`) are powered by database views. Do not edit their files directly unless updating dashboard schema structure.
 * **Maintain MOC Connections:** Any new project or course note should maintain double-bracket navigation links at the bottom: `**Previous:** [[Prev Note]] | **Next:** [[Next Note]]`.
 * **Use Premium Callout Layouts:** When requested to style or structure an MOC, use multi-column callouts (e.g. `> [!multi-column]`) and standard Obsidian alert blocks (e.g. `> [!info]`, `> [!abstract]`) to keep dashboards visually stunning.
+
+---
+
+## VERIFICATION & ARTIFACTS
+- To register file modifications and line-level edits on the IDE tracking pane, you must use the tracking session utility.
+- **Start tracking** at the very beginning of your task execution phase:
+  ```powershell
+  python .agent/skills/obsidian-markdown/scripts/run_tracked.py --start [--external "path/to/external/folder"]
+  ```
+- Run your tools, modifications, and scripts normally.
+- **Stop tracking** and write all accumulated changes to `walkthrough.md` at the very end of your verification phase:
+  ```powershell
+  python .agent/skills/obsidian-markdown/scripts/run_tracked.py --stop
+  ```
+- This ensures all local line-level changes and external file modifications are tracked and registered exactly once in the feed.
+

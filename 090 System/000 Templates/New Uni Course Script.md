@@ -47,7 +47,7 @@ if (!app.vault.getAbstractFileByPath(rootPath)) {
 }
 
 // 5. Create and Open
-const mocPath = `${rootPath}/${projectName} MOC.md`;
+const mocPath = `${rootPath}/000 ${projectName} MOC.md`;
 await app.vault.create(mocPath, content);
 const newFile = app.vault.getAbstractFileByPath(mocPath);
 await app.workspace.getLeaf().openFile(newFile);

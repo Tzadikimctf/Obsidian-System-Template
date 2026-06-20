@@ -53,8 +53,26 @@ if (mocType === "project_moc") {
     return;
 }
 
-const noteName = await tp.system.prompt("Note Name");
-if (!noteName) return;
+const noteNameInput = await tp.system.prompt("Note Name");
+if (!noteNameInput) return;
+const charMap = {
+    ":": " -",
+    "/": "-",
+    "\\": "-",
+    "*": "",
+    "?": "",
+    "\"": "'",
+    "<": "(",
+    ">": ")",
+    "|": "-"
+};
+const noteName = noteNameInput
+    .split("")
+    .map(char => charMap[char] !== undefined ? charMap[char] : char)
+    .join("")
+    .replace(/\s+/g, " ")
+    .replace(/-+/g, "-")
+    .trim();
 
 // Calculate next order sequence number
 let orderDefault = "1";
