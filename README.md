@@ -4,6 +4,39 @@ This is a clean, automated Obsidian Vault template structured using a PARA / Joh
 
 ---
 
+## 🚀 Getting Started
+
+To set up and start using this vault template:
+
+### 1. Clone the Vault
+Clone this repository to your local machine:
+```bash
+git clone https://github.com/Tzadikimctf/Obsidian-System-Template.git
+```
+
+### 2. Open in Obsidian
+1. Open the Obsidian application.
+2. Click **Open folder as vault** (the folder icon with a plus).
+3. Select the cloned `Obsidian-System-Template` folder.
+
+### 3. Initialize Settings & Plugins
+All plugin configurations are pre-bundled in the `.obsidian/` folder, but they need to be enabled:
+1. Open Obsidian **Settings** ➡️ **Community plugins**.
+2. If disabled, click **Enable community plugins**.
+3. Verify that all required plugins (Templater, Dataview, Meta Bind, Tasks, LaTeX Suite, and Loom) are toggled **ON**.
+
+### 4. Configure Loom for Local Code Execution (Optional)
+If you want to run fenced code blocks (like Python or Lean) directly inside your notes:
+1. Go to Obsidian **Settings** ➡️ **Loom**.
+2. Toggle **Enable local execution** to **ON** (acknowledge the local execution warning modal).
+3. **Windows Users:** If you want your code blocks to execute inside your Linux subsystem, toggle **Run on WSL** to **ON**.
+4. Configure the paths to your compilers/interpreters under **Built-in Runtimes** (e.g., set Python to `python` or Lean to `lean`).
+
+### 5. Open your Dashboard
+Open **`000 Home MOC.md`** at the root of the vault. This is your personal dashboard where you can manage your daily logs, university courses, and active projects!
+
+---
+
 ## 📂 Vault Structure Overview
 
 * **`000 Home MOC.md`** - Your main command center dashboard.
