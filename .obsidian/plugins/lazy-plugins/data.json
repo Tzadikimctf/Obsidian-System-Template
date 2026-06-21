@@ -80,6 +80,12 @@
       },
       "obsidian-local-rest-api": {
         "startupType": "instant"
+      },
+      "loom": {
+        "startupType": "instant"
+      },
+      "webpage-html-export": {
+        "startupType": "instant"
       }
     },
     "loadOrder": []

@@ -19,6 +19,7 @@
   "phpExecutable": "php",
   "goExecutable": "go",
   "rustExecutable": "rustc",
+  "haskellExecutable": "runghc",
   "javaCompilerExecutable": "",
   "javaExecutable": "java",
   "llvmInterpreterExecutable": "lli",
@@ -26,5 +27,16 @@
   "coqExecutable": "coqc",
   "smtExecutable": "z3",
   "writeOutputToNote": false,
-  "autoRunOnFileOpen": false
+  "autoRunOnFileOpen": false,
+  "customLanguages": [
+    {
+      "name": "COBOL",
+      "aliases": "",
+      "executable": "",
+      "args": "{file}",
+      "extension": ".txt"
+    }
+  ],
+  "pdfExportMode": "both",
+  "runOnWsl": true
 }
