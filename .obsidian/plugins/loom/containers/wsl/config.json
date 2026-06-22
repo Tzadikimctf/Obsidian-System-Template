@@ -1,0 +1,10 @@
+{
+  "runtime": "wsl",
+  "image": "debian",
+  "languages": {
+    "python": {
+      "command": "python3 {file}",
+      "extension": ".py"
+    }
+  }
+}

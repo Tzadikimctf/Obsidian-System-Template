@@ -1,7 +1,7 @@
 {
   "enableLocalExecution": true,
   "hasAcknowledgedExecutionRisk": true,
-  "preserveSourceMode": true,
+  "preserveSourceMode": false,
   "defaultTimeoutMs": 8000,
   "workingDirectory": "",
   "pythonExecutable": "python",
@@ -38,5 +38,6 @@
     }
   ],
   "pdfExportMode": "both",
+  "defaultContainerGroup": "wsl",
   "runOnWsl": true
 }
