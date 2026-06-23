@@ -83,6 +83,9 @@
       },
       "loom": {
         "startupType": "disabled"
+      },
+      "webpage-html-export": {
+        "startupType": "disabled"
       }
     },
     "loadOrder": []
