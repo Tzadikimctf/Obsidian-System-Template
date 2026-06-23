@@ -12,6 +12,7 @@
   "isTimestamp": false,
   "enabledCss": true,
   "concurrency": "5",
+  "version": "1",
   "prevConfig": {
     "pageSize": "A4",
     "marginType": "1",
@@ -25,6 +26,6 @@
     "marginRight": "10",
     "displayHeader": false,
     "displayFooter": false,
-    "cssSnippet": "C:\\Users\\thomy\\Obsidian notes\\.obsidian\\snippets\\pdf-page-breaks.css"
+    "cssSnippet": "0"
   }
 }

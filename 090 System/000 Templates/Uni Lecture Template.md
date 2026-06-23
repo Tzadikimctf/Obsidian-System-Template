@@ -1,6 +1,6 @@
 ---
 type: uni_lecture
-course: "[[<% tp.file.folder(true).split('/').pop() %>]]"
+course: "[[{{course}}]]"
 status: 🟢 Active
 order: {{order}}
 date_added: {{date}}
@@ -8,7 +8,7 @@ date_added: {{date}}
 # {{title}}
 
 **MOC:** [[{{parent}}]]
-**Course:** [[<% tp.file.folder(true).split('/').pop() %>]]
+**Course:** [[{{course}}]]
 **Lecture:** #{{order}}
 
 ---

@@ -4,7 +4,9 @@
   "enabledCssSnippets": [
     "BetterMermaid",
     "custom-dashboard",
-    "pdf-page-breaks"
+    "pdf-page-breaks",
+    "pdf-code-nowrap",
+    "pdf-embeds-clean"
   ],
   "baseFontSize": 16
 }

@@ -82,10 +82,7 @@
         "startupType": "instant"
       },
       "loom": {
-        "startupType": "instant"
-      },
-      "webpage-html-export": {
-        "startupType": "instant"
+        "startupType": "disabled"
       }
     },
     "loadOrder": []

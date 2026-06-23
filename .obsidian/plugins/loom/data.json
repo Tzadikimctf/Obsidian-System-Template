@@ -1,7 +1,7 @@
 {
   "enableLocalExecution": true,
   "hasAcknowledgedExecutionRisk": true,
-  "preserveSourceMode": false,
+  "preserveSourceMode": true,
   "defaultTimeoutMs": 8000,
   "workingDirectory": "",
   "pythonExecutable": "python",
@@ -28,16 +28,6 @@
   "smtExecutable": "z3",
   "writeOutputToNote": false,
   "autoRunOnFileOpen": false,
-  "customLanguages": [
-    {
-      "name": "COBOL",
-      "aliases": "",
-      "executable": "",
-      "args": "{file}",
-      "extension": ".txt"
-    }
-  ],
-  "pdfExportMode": "both",
-  "defaultContainerGroup": "wsl",
-  "runOnWsl": true
+  "customLanguages": [],
+  "pdfExportMode": "code"
 }

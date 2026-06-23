@@ -221,6 +221,25 @@ Only print files with warnings/errors:
 python .agent/skills/obsidian-markdown/scripts/validate.py --quiet
 ```
 
+### Run LaTeX-Specific Validation
+
+To check for finer LaTeX syntax errors, formatting/spacing conflicts, or subscript/superscript anomalies, use the dedicated LaTeX checker:
+
+Validate the entire vault:
+```powershell
+python .agent/skills/obsidian-markdown/scripts/check_latex.py
+```
+
+Validate a specific file or folder:
+```powershell
+python .agent/skills/obsidian-markdown/scripts/check_latex.py "021 University/Machine learning"
+```
+
+Only print files with warnings/errors:
+```powershell
+python .agent/skills/obsidian-markdown/scripts/check_latex.py --quiet
+```
+
 ## References
 
 - [Obsidian Flavored Markdown](https://help.obsidian.md/obsidian-flavored-markdown)

@@ -37,7 +37,7 @@ content = content.replace(/{{date}}/g, tp.date.now("YYYY-MM-DD"));
 
 // 4. Folder Creation (Unified 021 University structure)
 const rootPath = `021 University/${projectName}`;
-const subFolders = ["Lectures", "Assignments", "Resources"];
+const subFolders = ["Lectures", "Assignments", "Resources", "Summaries", "General"];
 
 if (!app.vault.getAbstractFileByPath(rootPath)) {
     await app.vault.createFolder(rootPath);

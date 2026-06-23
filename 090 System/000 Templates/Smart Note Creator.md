@@ -6,6 +6,7 @@ if (!activeFile) {
 }
 const parentMOC = activeFile.basename;
 const parentFolder = activeFile.parent.path;
+const parentName = parentFolder.split("/").pop();
 
 const fileCache = app.metadataCache.getFileCache(activeFile);
 const mocType = fileCache?.frontmatter?.type;
@@ -21,30 +22,40 @@ if (mocType === "project_moc") {
     subFolder = "Logs"; 
     targetType = "project_note";
 } else if (mocType === "uni_course_moc") {
-    const choice = await tp.system.suggester(["📓 Lecture Note", "📝 General Note / Summary"], ["Lecture Note", "General Note"]);
+    const choice = await tp.system.suggester(["📓 Lecture Note", "📝 Summary / Module", "✏️ General Note"], ["Lecture Note", "Summary", "General Note"]);
     if (!choice) return;
     
     if (choice === "Lecture Note") {
         templatePath = "090 System/000 Templates/Uni Lecture Template.md";
         subFolder = "Lectures";
         targetType = "uni_lecture";
+    } else if (choice === "Summary") {
+        templatePath = "090 System/000 Templates/Uni Lecture Template.md";
+        subFolder = "Summaries/English";
+        targetType = "uni_general";
+        isGeneralNote = true;
     } else {
         templatePath = "090 System/000 Templates/Uni Lecture Template.md";
-        subFolder = "";
+        subFolder = "General";
         targetType = "uni_general";
         isGeneralNote = true;
     }
 } else if (mocType === "course_moc") {
-    const choice = await tp.system.suggester(["📓 Lecture / Section Note", "📝 General Note / Summary"], ["Lecture Note", "General Note"]);
+    const choice = await tp.system.suggester(["📓 Lecture / Section Note", "📝 Summary", "✏️ General Note"], ["Lecture Note", "Summary", "General Note"]);
     if (!choice) return;
     
     if (choice === "Lecture Note") {
         templatePath = "090 System/000 Templates/Course Note Template.md";
         subFolder = "Lectures";
         targetType = "course_note";
+    } else if (choice === "Summary") {
+        templatePath = "090 System/000 Templates/Course Note Template.md";
+        subFolder = "Summaries/English";
+        targetType = "course_note";
+        isGeneralNote = true;
     } else {
         templatePath = "090 System/000 Templates/Course Note Template.md";
-        subFolder = "";
+        subFolder = "General";
         targetType = "course_note";
         isGeneralNote = true;
     }
@@ -77,7 +88,7 @@ const noteName = noteNameInput
 // Calculate next order sequence number
 let orderDefault = "1";
 if (isGeneralNote) {
-    orderDefault = "Summary";
+    orderDefault = subFolder.startsWith("Summaries") ? "Summary" : "General";
 } else {
     const targetFolderObj = app.vault.getAbstractFileByPath(`${parentFolder}/${subFolder}`);
     if (targetFolderObj && targetFolderObj.children) {
@@ -103,8 +114,11 @@ let content = await app.vault.read(templateFile);
 // Replacements
 content = content.replace(/{{title}}/g, noteName);
 content = content.replace(/{{parent}}/g, parentMOC);
+content = content.replace(/{{course}}/g, parentName);
+content = content.replace(/{{project}}/g, parentName);
 content = content.replace(/{{order}}/g, order);
 content = content.replace(/{{date}}/g, tp.date.now("YYYY-MM-DD"));
+
 
 if (isGeneralNote) {
     // Normalize line endings to LF to make string replacements reliable
@@ -115,7 +129,9 @@ if (isGeneralNote) {
     
     // Remove sequence/lecture lines for general notes
     content = content.replace("**Lecture:** #Summary\n", "");
+    content = content.replace("**Lecture:** #General\n", "");
     content = content.replace("**Sequence:** #Summary\n", "");
+    content = content.replace("**Sequence:** #General\n", "");
     
     // Remove the lecture notes/learning log sections entirely for general notes
     // We split the tag delimiters to prevent Templater from parsing them during template compilation

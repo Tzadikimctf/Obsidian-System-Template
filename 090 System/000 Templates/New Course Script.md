@@ -20,7 +20,7 @@ content = content.replace(/{{date}}/g, tp.date.now("YYYY-MM-DD"));
 
 // 3. Folder Creation
 const rootPath = `020 Courses/${courseName}`;
-const subFolders = ["Lectures", "Assignments", "Resources"];
+const subFolders = ["Lectures", "Assignments", "Resources", "Summaries", "General"];
 
 if (!app.vault.getAbstractFileByPath(rootPath)) {
     await app.vault.createFolder(rootPath);

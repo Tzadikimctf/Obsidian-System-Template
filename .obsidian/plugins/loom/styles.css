@@ -45,6 +45,45 @@
   margin-top: 0.65rem;
 }
 
+.loom-stdin-panel {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--background-modifier-border) 75%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--background-secondary) 88%, transparent);
+}
+
+.loom-stdin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.loom-stdin-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.loom-stdin-actions button {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.55rem;
+}
+
+.loom-stdin-input {
+  min-height: 4.5rem;
+  resize: vertical;
+  font-family: var(--font-monospace);
+  font-size: 0.87rem;
+  line-height: 1.45;
+}
+
 .loom-output-panel {
   margin-top: 0.5rem;
   border-radius: 14px;
@@ -130,9 +169,45 @@
   line-height: 1.45;
 }
 
+.loom-output-pre.is-scroll-limited {
+  max-height: calc((var(--loom-output-visible-lines) * 1.45em) + 1.5rem);
+  overflow: auto;
+}
+
 .loom-output-empty {
   color: var(--text-muted);
   font-style: italic;
+}
+
+.loom-source-preview {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.loom-source-preview-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.loom-source-preview-meta {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-muted);
+}
+
+.loom-source-preview-pre {
+  max-height: 24rem;
+  overflow: auto;
 }
 
 .loom-modal-actions {
@@ -175,6 +250,19 @@
 }
 
 .loom-custom-language > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.loom-language-package {
+  margin: 0.45rem 0;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-secondary);
+}
+
+.loom-language-package > summary {
   cursor: pointer;
   font-weight: 600;
 }
@@ -341,4 +429,3 @@
   margin-bottom: 0.75rem;
   background: var(--background-primary-alt);
 }
-

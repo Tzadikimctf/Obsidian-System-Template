@@ -1,6 +1,6 @@
 ---
 type: project_note
-project: "[[<% tp.file.folder(true).split('/').pop() %>]]"
+project: "[[{{project}}]]"
 status: 🟢 Active
 priority: 5
 order: {{order}}
@@ -11,7 +11,7 @@ links:
 # {{title}}
 
 **MOC:** [[{{parent}}]]
-**Project:** [[<% tp.file.folder(true).split('/').pop() %>]]
+**Project:** [[{{project}}]]
 **Sequence:** #{{order}}
 
 ---

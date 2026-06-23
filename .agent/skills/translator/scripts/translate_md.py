@@ -431,6 +431,17 @@ def main():
             f.write(final_text)
         print(f"Reassembled output written to: {args.out_path}")
         
+        # Clean up temp files if successful
+        try:
+            os.remove(args.hebrew_path)
+            os.remove(args.json_path)
+            if args.hebrew_path.endswith(".hebrew"):
+                temptrans_orig = args.hebrew_path[:-7]
+                if os.path.exists(temptrans_orig):
+                    os.remove(temptrans_orig)
+        except Exception as e:
+            print(f"Warning: Could not clean up temporary files: {e}")
+        
     elif args.command == "run" or args.command is None:
         path = args.path if args.command == "run" else (sys.argv[1] if len(sys.argv) > 1 else None)
         if not path:
