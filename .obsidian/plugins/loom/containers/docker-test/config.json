@@ -1,0 +1,15 @@
+{
+  "runtime": "docker",
+  "languages": {
+    "python": {
+      "command": "python3 {file}",
+      "extension": ".py"
+    },
+    "shell": {
+      "useDefault": true
+    },
+    "c": {
+      "useDefault": true
+    }
+  }
+}
