@@ -86,6 +86,9 @@
       },
       "webpage-html-export": {
         "startupType": "disabled"
+      },
+      "lotus": {
+        "startupType": "disabled"
       }
     },
     "loadOrder": []
