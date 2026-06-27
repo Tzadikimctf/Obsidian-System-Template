@@ -1,0 +1,13 @@
+{
+  "runtime": "docker",
+  "image": "python:3.12-slim",
+  "elevation": {
+    "mode": "default"
+  },
+  "languages": {
+    "python": {
+      "command": "python3 {file}",
+      "extension": ".py"
+    }
+  }
+}

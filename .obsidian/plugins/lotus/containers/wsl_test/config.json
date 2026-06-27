@@ -1,0 +1,13 @@
+{
+  "runtime": "wsl",
+  "image": "",
+  "elevation": {
+    "mode": "default"
+  },
+  "languages": {
+    "python": {
+      "command": "python3 {file}",
+      "extension": ".py"
+    }
+  }
+}

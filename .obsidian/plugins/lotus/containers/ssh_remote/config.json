@@ -1,0 +1,20 @@
+{
+  "runtime": "ssh",
+  "ssh": {
+    "target": "thom@185.168.195.101",
+    "workspace": "/tmp/lotus",
+    "cleanupRemoteFile": true,
+    "sshArgs": "-p 19584",
+    "scpArgs": "-P 19584"
+  },
+  "languages": {
+    "python": {
+      "command": "python3 {file}",
+      "extension": ".py"
+    }
+  },
+  "elevation": {
+    "mode": "default"
+  },
+  "outputFilters": {}
+}
